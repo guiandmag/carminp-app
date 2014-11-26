@@ -55,9 +55,19 @@ angular.module('app', ['ionic'])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
-    .state('page4', {
+    .state('page5', {
       url: '/tabs',
+      templateUrl: 'page5.html'
+    })
+    
+    .state('page4', {
+      url: '/login',
       templateUrl: 'page4.html'
+    })
+    
+    .state('page6', {
+      url: '/signup',
+      templateUrl: 'page6.html'
     })
     ;
 
@@ -80,11 +90,12 @@ angular.module('app', ['ionic'])
         <ion-nav-view></ion-nav-view>
     </div>
 </div>
-<script id="page4.html" type="text/ng-template">
-<ion-view title="">
+<script id="page5.html" type="text/ng-template">
+<ion-view title="Carminp">
     <ion-tabs class="tabs-dark tabs-icon-left">
         <ion-tab title="" icon="ion-android-add">
             <ion-content padding="true" class="has-header">
+                <h3>Adicionar</h3>
                 <form>
                     <ion-list>
                         <label class="item item-input" name="Autor">
@@ -96,25 +107,38 @@ angular.module('app', ['ionic'])
                 <label class="item item-input" name="Frase">
                     <span class="input-label">Frase</span><textarea placeholder="Frase"> </textarea>
                 </label>
+                <div class="button-bar"></div>
+                <div class="spacer" style="width: 0px; height: 0px;"></div>
+                <div class="spacer" style="width: 0px; height: 0px;"></div>
+                <div class="button-bar"></div>
+                <form>
+                    <ion-toggle toggle-class="toggle-positive" name="Favorito">Favorito</ion-toggle>
+                </form>
+                <div class="spacer" style="width: 0px; height: 0px;"></div>
+                <div class="spacer" style="height: 100px;"></div>
+                <div class="button-bar">
+                    <button class="button button-positive button-block">Salvar</button>
+                    <button class="button button-assertive button-block">Cancelar</button>
+                </div>
             </ion-content>
         </ion-tab>
         <ion-tab title="" icon="ion-android-search">
             <ion-content padding="true" class="has-header">
+                <h3>Buscar</h3>
                 <form>
                     <label class="item item-input" name="buscar">
                         <i class="icon ion-search placeholder-icon"></i>
-                        <input type="search" placeholder="Buscar">
+                        <input type="search" placeholder="">
                     </label>
                 </form>
-                <div class="list card">
-                    <div class="item item-divider">Frases</div>
-                    <div class="item item-body"></div>
-                </div>
+                <button class="button button-positive button-block">Achar</button>
+                <div class="spacer" style="display: inline; width: 2.22222232818604px; height: 47.7777786254883px;"></div>
             </ion-content>
         </ion-tab>
         <ion-tab title="" icon="ion-android-social-user">
             <ion-content padding="true" class="has-header">
-                <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
+                <h3>Perfil</h3>
+                <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
                     <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
                 </div>
                 <div class="button-bar">
@@ -124,6 +148,49 @@ angular.module('app', ['ionic'])
             </ion-content>
         </ion-tab>
     </ion-tabs>
+</ion-view></script>
+<script id="page4.html" type="text/ng-template">
+<ion-view title="Login">
+    <ion-content padding="true" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label"></span>
+                    <input type="text" placeholder="Username">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"></span>
+                    <input type="password" placeholder="Password">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <button class="button button-balanced button-block">Log in</button>
+            <a href="#/tabs" class="button button-positive button-block">Log in with Facebook</a>
+            <a href="#/signup" class="button button-positive button-clear button-block">Or create an account</a>
+        </form>
+    </ion-content>
+</ion-view></script>
+<script id="page6.html" type="text/ng-template">
+<ion-view title="Signup">
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label"></span>
+                    <input type="text" placeholder="Username">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"></span>
+                    <input type="text" placeholder="Email">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label"></span>
+                    <input type="text" placeholder="Password">
+                </label>
+            </ion-list>
+            <a href="#/tabs" class="button button-balanced button-block">Sign up</a>
+        </form>
+    </ion-content>
 </ion-view></script>
   </body>
 </html>
