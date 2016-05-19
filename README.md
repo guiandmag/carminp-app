@@ -1,4 +1,4 @@
 carminp-app
 ===========
 
-Carminp app source
+Carminp app source code
